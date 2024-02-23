@@ -1,0 +1,79 @@
+<hr>
+<div class="faq-ride" style="text-align: {{ section.settings.text-position }};">
+  <h1 class="h1">
+    <b>{{ section.settings.headline }}</b>
+
+  </h1>
+  {% for block in section.blocks %}
+    <div>
+      <p>
+        <b class="faq__question">Question {{ forloop.index }} : {{ block.settings.question }}
+        </b>
+      </p>
+    </div>
+    <div>
+      <p class="faq__answer">Answer : {{ block.settings.answer }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "FAQ",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "Headline"
+      },
+      {
+        "type": "select",
+        "id": "text-position",
+        "label": "Select the position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      }
+
+    ],
+    "blocks": [
+      {
+        "name": "Questions",
+        "type": "questions",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "text",
+            "id": "answer",
+            "label": "Answer"
+          }
+
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "FAQ"
+      }
+    ]
+
+  }
+{% endschema %}

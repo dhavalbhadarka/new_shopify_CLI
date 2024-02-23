@@ -1,0 +1,49 @@
+<hr>
+<div class="container">
+
+<h2>{{ section.settings.heading }}</h2>
+<p>{{ section.settings.description }}</p>
+
+{% for block in section.blocks %}
+
+  <img src="{{block.settings.image |  img_url: 'medium'}}">
+
+{% endfor %}
+</div>
+
+{% schema %}
+  {
+
+    "name": "image with heading",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "heading"
+      },
+      {
+        "type": "richtext",
+        "label": "description",
+        "id": "description"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "image block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "label": "your image",
+            "id": "image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "image with heading"
+      }
+    ]
+  }
+{% endschema %}

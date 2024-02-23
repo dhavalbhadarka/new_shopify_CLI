@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    max-width: 1200px; /* Set a fixed max-width for the container */
+    margin-bottom: 70px;
+    margin-top: 70px;
+
+}
+
+.container img {
+    width: 400px; /* Set a fixed width for your image */
+    height: 350px; /* Set a fixed height for your image */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    margin-right: 20px; /* Adjust the margin between image and text */
+    margin-left: 50px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Fill the remaining width */
+}
+
+h2, p {
+    margin: 0; /* Remove default margin for h2 and p */
+}
+
+
