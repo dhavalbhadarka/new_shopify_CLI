@@ -1,3 +1,15 @@
+{{ 'right-image-description.css' | asset_url | stylesheet_tag }}
+<body>
+
+  <div class="container">
+   <img src="{{ section.settings.image | image_url: 'medium' }}"width="auto" height="auto">
+    <div class="text-container"  style="text-align: {{ section.settings.text-position }};">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description}}</p>
+    </div>
+  </div>
+
+</body>
 
 
 {% schema %}
